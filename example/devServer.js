@@ -3,7 +3,7 @@ const exec = require('child_process').exec
 const Express = require('express')
 const watch = require('node-watch')
 
-const srcPath = __dirname.split('/example')[0] + '/src';
+const srcPath = `${__dirname.split('/example')[0]}/src`
 
 const hotBuild = () => exec('npm run build:dist', (err, stdout, stderr) => {
   if (err) throw err
@@ -40,9 +40,7 @@ app.listen(port, error => {
   } else {
     console.info(
       '🌎 Listening on port %s. Open up http://localhost:%s/ in your browser.',
-      port,
-      port
-    )
+      port, port)
   }
   /* eslint-enable no-console */
 })

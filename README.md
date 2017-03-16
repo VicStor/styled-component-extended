@@ -21,7 +21,7 @@ Utilising [tagged template literals](./docs/tagged-template-literals.md) (a rece
 *Made by [Glen Maddern](https://twitter.com/glenmaddern) and [Max Stoiber](https://twitter.com/mxstbr), supported by [Front End Center](https://frontend.center) and [Thinkmill](http://thinkmill.com.au/). Thank you for making this project possible!*
 
 ## Extention
-### Instanciate style-components with init object of shape
+### Extend style-components with object of following shape
 ```JS
 {
   vars: {
@@ -33,7 +33,11 @@ Utilising [tagged template literals](./docs/tagged-template-literals.md) (a rece
 }
 ```
 ### Here is usage example
-#### Instantiation
+#### Extention
+variables are the strings, like padding: #minSpace;
+mixins are the functions, like @flex(1 1 auto);
+mixin accepts varible as argument, like @margin(#minSpace)
+mixin accepts multiple arguments, like @tint(#primaryRed, -10%)
 ```JavaScript
 styled.init({
   vars: {
@@ -60,7 +64,7 @@ const Wrapper = styled.div`
   #jc:sb;
   @flex(1 1 auto);
   @margin(#minSpace);
-  background-color: @tint(#red, 10%);
+  background-color: @tint(#red, -10%);
 `;
 ```
 ## Usage
