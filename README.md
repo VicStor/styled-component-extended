@@ -20,6 +20,49 @@ Utilising [tagged template literals](./docs/tagged-template-literals.md) (a rece
 
 *Made by [Glen Maddern](https://twitter.com/glenmaddern) and [Max Stoiber](https://twitter.com/mxstbr), supported by [Front End Center](https://frontend.center) and [Thinkmill](http://thinkmill.com.au/). Thank you for making this project possible!*
 
+## Extention
+### Instanciate style-components with init object of shape
+```JS
+{
+  vars: {
+    variableName: 'Variable string value'
+  },
+  mixins: {
+    flex: (flex) => `flex: ${flex}`
+  }
+}
+```
+### Here is usage example
+#### Instantiation
+```JavaScript
+styled.init({
+  vars: {
+    minSpace: '0.5em',
+    primaryRed: 'red',
+    'd:f': 'display: flex',
+    'ff:rn': 'display: flex; flex-flow: row nowrap',
+    'ff:cn': 'display: flex; flex-flow: column nowrap',
+    'jc:sb': 'justify-content: space-between',
+    'f:a': 'flex: auto'
+  },
+  mixins: {
+    flex: (flex) => `flex: ${flex}`,
+    margin: (margin) => `margin: ${margin}`,
+    tint: (color, value) => coolTintColorFunction(color, value)
+  },
+});
+```
+#### Invocation
+```JavaScript
+const Wrapper = styled.div`
+  padding: #minSpace;
+  #ff:cn;
+  #jc:sb;
+  @flex(1 1 auto);
+  @margin(#minSpace);
+  background-color: @tint(#red, 10%);
+`;
+```
 ## Usage
 
 ### Basic
