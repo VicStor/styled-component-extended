@@ -64,7 +64,7 @@ const Wrapper = styled.div`
   #jc:sb;
   @flex(1 1 auto);
   @margin(#minSpace);
-  background-color: @tint(#red, -10%);
+  background-color: @tint(#primaryRed, -10%);
 `;
 ```
 ## Usage
