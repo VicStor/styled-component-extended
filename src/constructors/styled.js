@@ -6,8 +6,7 @@ import replaceVarsAndMixins from '../utils/varsAndMixins'
 
 
 export default (styledComponent: Function) => {
-  const styled = (tag: Target) =>
-    (strings: Array<string>, ...interpolations: Array<Interpolation>) => {
+  const styled = (tag: Target) => (strings: Array<string>, ...interpolations: Array<Interpolation>) => {
       const { globalObject } = styled
       const newStrings = globalObject ? replaceVarsAndMixins(globalObject)(strings) : strings
       return styledComponent(tag, css(newStrings, ...interpolations))
